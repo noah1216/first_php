@@ -10,3 +10,6 @@
 </div>
 <input type="submit" value="login">
 </form>
+<p>
+<a href="signup.php">新規登録</a>
+</p>

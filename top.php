@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 <head>
 <meta charset="utf-8" />
 <link rel="stylesheet" href="style.css">
@@ -16,7 +17,7 @@
   <div class="button-box">
     <div class="buttonsize-box">
       <div class="top-center">
-        <a href="listServlet">
+        <a href="list.php">
 	        <button type="button" class="button-size1">問題と答えを確認・登録する　＞</button>
 	      </a>
       </div>

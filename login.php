@@ -34,6 +34,10 @@ if (($_POST['pass'] == $member['password'])) {
   $_SESSION['id'] = $member['id'];
   $_SESSION['name'] = $member['name'];
   include "top.php";
+}else if(password_verify($_POST['pass'], $member['password'])){
+  $_SESSION['id'] = $member['id'];
+  $_SESSION['name'] = $member['name'];
+  include "top.php";
 } else {
   include "login_form.php";
 }
