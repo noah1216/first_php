@@ -63,7 +63,10 @@ $answers = $stmt->fetchAll(PDO::FETCH_ASSOC);
       <?php endforeach; ?>
 
     <div>
-      <input type="button" value="編集" >
+      <form action="edit_form.php" method="post">
+        <input type="hidden" name="id" value="<?php echo $question["id"] ?>" >
+        <input type="submit" value="編集">
+      </form>
       <form action="delete_form.php" method="post">
         <input type="hidden" name="id" value="<?php echo $question["id"] ?>" >
         <input type="submit" value="削除">
