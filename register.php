@@ -3,8 +3,6 @@
 $name = $_POST['name'];
 $pass = password_hash($_POST['pass'], PASSWORD_DEFAULT);
 
-// フォームからnameを取得、変数定義
-$name = $_POST['name'];
 // DBへ接続
 try {
 $dbh = new PDO("mysql:host=127.0.0.1; dbname=php_db; charset=utf8", 'root', 'takahasi1216');

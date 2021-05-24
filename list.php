@@ -30,15 +30,17 @@ $answers = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
   <div class="header-box">
     <a href="top.php">
-      <input type="submit" value="top" class="b-size magin-l10">
+      <input type="button" value="top" class="b-size magin-l10">
     </a>
     <a href="logout.php">
-      <input type="submit" value="logout" class="b-size magin-l10">
+      <input type="button" value="logout" class="b-size magin-l10">
     </a>
   </div>
 
   <div class="list-center">
-    <input type="submit" value="新規登録" class="b-size">
+    <a href="new.php">
+      <input type="button" value="新規登録" class="b-size magin-l10">
+    </a>
   </div>
 
 <?php $counter = 1; ?>
@@ -59,10 +61,15 @@ $answers = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <?php $counter2 =  $counter2 + 1; ?>
         <?php endif; ?>
       <?php endforeach; ?>
+
     <div>
       <input type="button" value="編集" >
-      <input type="button" value="削除" >
+      <form action="delete_form.php" method="post">
+        <input type="hidden" name="id" value="<?php echo $question["id"] ?>" >
+        <input type="submit" value="削除">
+      </form>
     </div>
+    
   </div>
   <?php $counter2 = 1; ?>
   <?php $counter =  $counter + 1; ?>
