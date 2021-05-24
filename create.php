@@ -14,20 +14,12 @@ $stmt = $dbh->prepare($sql);
 $stmt->bindValue(':question', $question);
 $stmt->execute();
 
-  // questionのidを取得する
-$sql2 = "SELECT * FROM questions WHERE question = :question";
-$stmt = $dbh->prepare($sql2);
-$stmt->bindValue(':question', $question);
-$stmt->execute();
-$getQuestion = $stmt->fetch();
-$questions_id = $getQuestion["id"];
 
   // answerの登録
 foreach ($answers as $answer){
-  $sql = "INSERT INTO correct_answers(answer,questions_id) VALUES (:answer,:questions_id)";
+  $sql = "INSERT INTO correct_answers(answer,questions_id) VALUES (:answer,(select id from questions order by created_at desc limit 1))";
   $stmt = $dbh->prepare($sql);
   $stmt->bindValue(':answer', $answer);
-  $stmt->bindValue(':questions_id', $questions_id);
   $stmt->execute();
 }
 
