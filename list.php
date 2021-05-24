@@ -30,15 +30,17 @@ $answers = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
   <div class="header-box">
     <a href="top.php">
-      <input type="submit" value="top" class="b-size magin-l10">
+      <input type="button" value="top" class="b-size magin-l10">
     </a>
     <a href="logout.php">
-      <input type="submit" value="logout" class="b-size magin-l10">
+      <input type="button" value="logout" class="b-size magin-l10">
     </a>
   </div>
 
   <div class="list-center">
-    <input type="submit" value="新規登録" class="b-size">
+    <a href="new.php">
+      <input type="button" value="新規登録" class="b-size magin-l10">
+    </a>
   </div>
 
 <?php $counter = 1; ?>
