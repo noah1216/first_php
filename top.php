@@ -27,7 +27,9 @@
         </a>
       </div>
       <div class="top-center">
-        <input type="button" value="過去の採点結果を見る　＞" class="button-size">
+        <a href="history.php">
+          <button type="button" class="button-size1">過去の採点結果を見る　＞</button>
+        </a>
       </div>
     </div>
   </div>
