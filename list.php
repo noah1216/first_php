@@ -61,10 +61,15 @@ $answers = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <?php $counter2 =  $counter2 + 1; ?>
         <?php endif; ?>
       <?php endforeach; ?>
+
     <div>
       <input type="button" value="編集" >
-      <input type="button" value="削除" >
+      <form action="delete_form.php" method="post">
+        <input type="hidden" name="id" value="<?php echo $question["id"] ?>" >
+        <input type="submit" value="削除">
+      </form>
     </div>
+    
   </div>
   <?php $counter2 = 1; ?>
   <?php $counter =  $counter + 1; ?>
